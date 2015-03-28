@@ -1,0 +1,27 @@
+{
+	"year":		2010,
+	"images":	[
+					"expert-matters-home.png",
+					"expert-matters-overlay.png",
+					"expert-matters-detail.png"
+				],
+	"thumbnail-image":	"expert-matters-preview.png",
+	"related":	[
+					{
+						"title":	"Clear Primary actions in Drupal",
+						"url":		"http://blog.cbsides.com/Clear-Primary-Actions-in-Drupal.html"
+					}
+				],
+	"roles":	{
+					"design":	[
+									"Visual design",
+									"Interaction design"
+								],
+					"client-side":	[
+									"JavaScript, jQuery"
+								],
+					"server-side":	[
+									"Drupal module development"
+								]
+				}
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<%
+    // note that each article is assumed to have its own directory in the articles directory
+    // and json metadata named data.json
+    var projects = contents.projects._.directories
+        .map(function(item) { 
+            return { html: item.index, json: item['data.json'] };
+        })
+        .sort(function(a, b) {
+            return a.json && b.json && (a.json.metadata.year < b.json.metadata.year);
+        });
+
+%>
+<html lang="en" ng-app="myApp">
+<head>
+    <% include _head.ejs %>
+</head>
+<body>
+    <% include _header.ejs %>
+
+    <div class="row">
+        <div class="small-12 columns">
+            <nav class="breadcrumbs" role="menubar" aria-label="breadcrumbs">
+                <a class="current">Projects</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="heading text-center">
+        <div class="row">
+            <div class="small-12 columns">
+                <h1>All Projects</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-12 columns">
+            <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3 project-list">
+    <% projects.forEach(function(project){ %>
+        <% if (project.json) { %>
+            <% include _project_list_item.ejs %>
+        <% } %>
+    <% }) %>
+            </ul>
+        </div>
+    </div>
+
+    <% include _footer.ejs %>
+</body>
+</html>
+

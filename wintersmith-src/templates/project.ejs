@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <% include _head.ejs %>
+</head>
+<body>
+    <% include _header.ejs %>
+    <%
+        var json = page.parent['data.json'];
+    %>
+    <div class="row">
+        <div class="small-12 columns">
+        <% if (json) { %>
+            <nav class="breadcrumbs" role="menubar" aria-label="breadcrumbs">
+                <a href="/projects.html">Projects</a>
+                <a class="unavailable" ><%= json.metadata.year %></a>
+                <a class="current"><%= page.title %></a>
+            </nav>
+        <% } %>
+        </div>
+    </div>
+    <div class="heading text-center">
+        <div class="row">
+            <div class="small-12 columns">
+            <% if (json) { %>
+                <h1>
+                    <% if (json.metadata.url) { %>
+                    <% } %>
+                    <%= page.title %>
+                </h1>
+
+            <% } %>
+            </div>
+        </div>
+    </div>
+
+    <% if (json) { %>
+
+        <% if (json.metadata.images) { %>
+
+
+        <div class="featured texture">
+            <div class="row collapse">
+                <div class="small-12 medium-10 medium-offset-1 large-8 large-offset-2 columns">
+                    <slick slides-to-show="1" arrows="true" infinite="true" responsive="[{breakpoint: 641, settings: { centerMode: true, arrows: false }}]">
+                        <% json.metadata.images.forEach(function(image) { %>
+                            <div>
+                                <a target="_blank" href="original-images/<%= image %>">
+                                    <img src="<%= image %>">
+                                </a>
+                            </div>
+                        <% }) %>
+                    </slick>
+                </div>
+            </div>
+        </div>
+
+        <% } %>
+    <% } %>
+    <div class="row">
+        <div class="small-12 large-7 columns">
+    <% if (json) { %>
+
+        <% if (json.metadata.url) { %>
+        <div class="hide-for-large-up">
+            <% include _project_view_button.ejs %>
+        </div>
+        <% } %>
+    <% } %>
+
+
+    <div class="project-summary-detail">
+        <%- page.html %>
+    </div>
+
+    <% if (json) { %>
+        <% if (json.metadata.url) { %>
+            <% include _project_view_button.ejs %>
+        <% } %>
+    <% } %>
+        </div>
+
+        <div class="small-12 large-5 columns">
+    <% if (json) { %>
+
+        <% if (json.metadata.url) { %>
+        <div class="show-for-large-up">
+            <% include _project_view_button.ejs %>
+        </div>
+        <% } %>
+
+        <% if (json.metadata.roles) { %>
+            <% if (json.metadata.roles['design']) { %>
+            <!--
+            <span class="role-badge">
+                <i title="Design" class="fa fa-pencil-square-o"></i>
+            </span>
+            -->
+
+            <h6>
+                <i class="fa fa-pencil-square-o"></i>
+                Design
+            </h6>
+            <ul class="square">
+                <% json.metadata.roles['design'].forEach(function(specificRole) { %>
+                    <li>
+                        <%= specificRole %>
+                    </li>
+                <% }) %>
+            </ul>
+            <% } %>
+            <% if (json.metadata.roles['client-side']) { %>
+            <!--
+            <span class="role-badge">
+                <i title="Front-end development" class="fa fa-code"></i>
+            </span>
+            -->
+            <h6>
+                <i class="fa fa-code"></i>
+                Front-end development
+            </h6>
+            <ul class="square">
+                <% json.metadata.roles['client-side'].forEach(function(specificRole) { %>
+                    <li>
+                        <%= specificRole %>
+                    </li>
+                <% }) %>
+            </ul>
+            <% } %>
+            <% if (json.metadata.roles['server-side']) { %>
+            <!--
+            <span class="role-badge">
+                <i title="Back-end development" class="fa fa-cubes"></i>
+            </span>
+            -->
+
+            <h6>
+                <i class="fa fa-cubes"></i>
+                Back-end development
+            </h6>
+            <ul class="square">
+                <% json.metadata.roles['server-side'].forEach(function(specificRole) { %>
+                    <li>
+                        <%= specificRole %>
+                    </li>
+                <% }) %>
+            </ul>
+            <% } %>
+        <% } %>
+        <% if (json.metadata.related) { %>
+            <h6>
+                <i class="fa fa-bullhorn
+                    "></i>
+                Related blog posts
+            </h6>
+            <ul class="square">
+                <% json.metadata.related.forEach(function(blogPost) { %>
+                    <li>
+                        <a href="<%= blogPost.url %>">
+                            <%= blogPost.title %>
+                        </a>
+                    </li>
+                <% }) %>
+            </ul>
+        <% } %>
+
+    <% } %>
+        </div>
+    </div>
+
+    <% include _footer.ejs %>
+</body>
+</html>
+

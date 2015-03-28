@@ -1,0 +1,31 @@
+{
+	"year":		2013,
+	"images":	[
+					"masterstreet-mobile.png",
+					"masterstreet-tablet.png",
+					"masterstreet-desktop.png"
+				],
+	"thumbnail-image":	"masterstreet-preview.png",
+	"related":	[
+					{
+						"title":	"Rails: Authenticate with EmberJS",
+						"url":		"http://blog.cbsides.com/Rails-Authenticate-with-EmberJS.html"
+					}
+				],
+	"roles":	{
+					"design":	[
+                        "Responsive Web Design"
+                    ],
+					"client-side":	[
+									"HTML, SEO, Google Structured Data",
+									"CSS, Sass, Foundation 5",
+									"JavaScript, AngularJS, BroccoliJS"
+								],
+					"server-side":	[
+									"Ruby on Rails 4",
+									"PostgreSQL, elasticsearch",
+									"Bash, nginx, Vagrant",
+                                    "AWS EC2, OpsWorks"
+								]
+				}
+}

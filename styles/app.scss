@@ -1,0 +1,243 @@
+@import "foundation/functions"; // just foundation helpers
+
+$cb-orange: #f96;
+
+$cb-verylightgray: #ececec;
+$cb-lightgray: #ccc;
+$cb-mediumgray: #999;
+$cb-darkgray: #666;
+$cb-lightblack: #555;
+$cb-black: #333;
+
+//$cb-linkcolor: #e64; //  // 3DA3FC
+$cb-linkcolor: #3DA3FC;
+//$cb-linkcolorvisited: $cb-mediumgray;
+//$cb-linkcolorhover: $cb-orange;
+
+// type variables
+$body-font-family: "Raleway", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$paragraph-font-family: inherit;
+$header-font-family: "Oswald", Impact, sans-serif;
+$code-font-family: Consolas, Liberation Mono, Courier, monospace;
+// We use these to control header font sizes
+$h1-font-size: rem-calc(35);
+$h2-font-size: rem-calc(30);
+$h3-font-size: rem-calc(28);
+$h4-font-size: rem-calc(28);
+$h5-font-size: rem-calc(28);
+$h6-font-size: 1rem;
+
+
+$primary-color: $cb-linkcolor;
+$body-font-color: $cb-black;
+$header-font-color: $cb-lightblack;
+
+$row-width: rem-calc(800);
+
+$topbar-bg-color: $cb-orange;
+$topbar-height: rem-calc(85);
+
+$crumb-bg: #fff;
+$crumb-border-size: 0;
+$crumb-padding: rem-calc(8 0 8);
+
+// font awesome config
+$fa-font-path: '.';
+@import "foundation";
+@import "font-awesome";
+@import "app/vendor";
+
+// carousel customization
+.slick-prev, .slick-next {
+    width: 40px;
+    height: 40px;
+}
+.slick-prev:before, .slick-next:before {
+    font-size: 40px;
+    color: $cb-black;
+    opacity: 0.5;
+}
+.slick-prev { left: -52px; }
+.slick-next { right: -52px; }
+.slick-slider {
+    margin-bottom: $column-gutter/2;
+    img {
+        margin: auto;
+        max-height: rem-calc(400);
+    }
+}
+
+// type
+h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+    .fa {
+        margin-right: 0.2rem;
+    }
+}
+
+.hero-text {
+    color: $cb-darkgray;
+    padding-top: rem-calc(20);
+    padding-bottom: rem-calc(12);
+}
+.social-icon {
+    i {
+        font-size: 1rem;
+        vertical-align: middle;
+    }
+    .fa-envelope {
+        font-size: rem-calc(14);
+    }
+}
+.top-bar {
+    padding: 0 $column-gutter/2;
+    .name {
+        line-height: $topbar-height;
+        height: rem-calc(50);
+        img {
+            height: 100%;
+        }
+    }
+    .title-area {
+        // all sizes OK
+        float: left;
+    }
+    .social-icon {
+        margin-left: rem-calc(10);
+        a {
+            font-size: rem-calc(32);
+        }
+        i {
+            color: #fff;
+            font-size: inherit;
+        }
+
+        .fa-envelope {
+            font-size: rem-calc(26);
+        }
+    }
+    .top-bar-section {
+        // (fighting the framework)
+        // weird hack because
+        // I float a div, not a ul
+        overflow: hidden;
+        .right {
+            margin-top: -3px;
+        }
+    }
+}
+
+.texture {
+    background: url('/images/bg-1.gif') repeat;
+}
+
+
+.heading, .featured-heading {
+    margin-bottom: $column-gutter/2;
+    background: $cb-verylightgray;
+    h1, h2 {
+        margin: rem-calc(8) 0;
+    }
+}
+
+.featured {
+    border-bottom: rem-calc(8) solid $cb-verylightgray;
+    margin-bottom: 1em;
+}
+
+.project-list-item {
+    border-bottom: 1px solid $cb-verylightgray;
+    &:last-child {
+        border-bottom-width: 0;
+    }
+    h6 {
+        padding-top: $column-gutter/2;
+    }
+}
+.project-list-item-roles {
+    .text-right {
+        margin-top: -0.2rem;
+        .fa {
+            margin-right: $column-gutter/2;
+        }
+        .fa-code {
+            margin-right: $column-gutter/2 + rem-calc(1);
+        }
+        .fa-cubes {
+            margin-right: $column-gutter/2 - rem-calc(2);
+        }
+    }
+    li {
+        font-size: 0.8rem;
+    }
+}
+
+.project-summary {
+    p {
+        margin-bottom: rem-calc(4);
+    }
+}
+.project-summary-detail {
+    p:first-child:first-letter {
+        font-size: 1.6rem;
+        line-height: 1rem;
+    }
+}
+// (footer)
+.inverse {
+    color: $cb-darkgray;
+    background: $cb-black;
+
+    h1, h2, h3, h4, h5, h6 {
+        color: $cb-darkgray;
+    }
+    a {
+        &:link, &:visited, &:active {
+            color: $cb-lightgray;
+        }
+        &:hover {
+            color: $cb-mediumgray;
+        }
+    }
+    .name {
+        margin: $column-gutter 0;
+        height: rem-calc(80);
+        img {
+            height: 100%;
+        }
+    }
+}
+footer {
+    margin-top: $column-gutter;
+}
+
+.copyright {
+
+    a {
+        &:link, &:visited, &:hover, &:active {
+            color: $cb-darkgray;
+        }
+    }
+}
+
+
+@media #{$medium-up} {
+    .hero-text {
+        p {
+            font-size: rem-calc(18);
+        }
+    }
+    .project-list-item {
+        border-bottom-width: 0;
+    }
+}
+
+@media #{$large-up} {
+
+    // carousel customization
+    .slick-slider {
+        img {
+            max-height: rem-calc(500);
+        }
+    }
+}

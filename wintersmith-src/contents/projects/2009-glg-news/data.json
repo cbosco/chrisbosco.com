@@ -1,0 +1,27 @@
+{
+	"year":		2009,
+	"images":	[
+					"glgnews-write.png",
+					"glgnews-favorites.png"
+				],
+	"thumbnail-image":	"glgnews-preview.png",
+	"related":	[
+
+					{
+						"title":	"Spellcheck HTML Inline with GoogieSpell",
+						"url":		"http://blog.cbsides.com/Spellcheck-HTML-Inline-with-GoogieSpell.html"
+					},
+					{
+						"title":	"Spellcheck Rich Text with GoogieSpell",
+						"url":		"http://blog.cbsides.com/Spellcheck-Rich-Text-with-GoogieSpell.html"
+					}
+
+				],
+	"roles":	{
+					"client-side":	[
+									"HTML, ASP.NET MVC views",
+									"CSS",
+									"JavaScript, jQuery AJAX"
+								]
+				}
+}

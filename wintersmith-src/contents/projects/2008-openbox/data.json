@@ -1,0 +1,18 @@
+{
+
+	"year":		2008,
+	"images":	[
+					"openbox.png"
+				],
+	"thumbnail-image":	"openbox-preview.png",
+	"url":	"http://projects-chrisbosco.herokuapp.com/openbox/",
+	"roles":	{
+					"design":	[
+									"Visual design"
+								],
+					"client-side":	[
+									"CSS, overridable theme",
+									"JavaScript, MooTools"
+								]
+				}
+}

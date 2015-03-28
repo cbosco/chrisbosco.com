@@ -1,0 +1,26 @@
+{
+
+	"year":		2008,
+	"images":	[
+					"autographs-dimensions.jpg",
+					"autographs-economy.jpg",
+					"autographs-start.jpg"
+				],
+	"thumbnail-image":	"autographs-preview.jpg",
+	"url":		"http://projects-chrisbosco.herokuapp.com/autographs/",
+	"roles":	{
+					"design":	[
+									"Visual design",
+									"Interaction design"
+								],
+					"client-side":	[
+									"HTML",
+									"CSS",
+									"JavaScript, canvas"
+								],
+					"server-side":	[
+									"PHP JSON over XHR",
+									"MySQL"
+								]
+				}
+}

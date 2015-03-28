@@ -1,0 +1,25 @@
+{
+
+	"year":		2009,
+	"images":	[
+					"cbsides.png",
+					"cbsides-listing.png"
+				],
+	"thumbnail-image":	"cbsides-preview.png",
+	"roles":	{
+					"design":	[
+									"Visual design",
+									"Information architecture",
+									"Interaction design"
+								],
+					"client-side":	[
+									"HTML",
+									"CSS",
+									"JavaScript, jQuery"
+								],
+					"server-side":	[
+									"PHP, CodeIgniter",
+									"MySQL"
+								]
+				}
+}

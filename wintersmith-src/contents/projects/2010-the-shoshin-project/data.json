@@ -1,0 +1,26 @@
+{
+	"year":		2010,
+	"images":	[
+					"shoshin-edition.png",
+					"shoshin-video-detail.png",
+					"shoshin-article-detail.png"
+				],
+	"thumbnail-image":	"shoshin-preview.png",
+	"url":		"http://theshoshinproject.com/",
+	"related":	[
+					{
+						"title":	"jQuery Effect Sequencer",
+						"url":		"http://blog.cbsides.com/jQuery-Effect-Sequencer.html"
+					}
+				],
+	"roles":	{
+					"design":	[
+									"Interaction design prototyping"
+								],
+					"client-side":	[
+									"HTML, jQuery templates",
+									"CSS",
+									"JavaScript, jQuery"
+								]
+				}
+}

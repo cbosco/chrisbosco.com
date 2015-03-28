@@ -1,0 +1,29 @@
+{
+	"year":		2011,
+	"images":	[
+					"aviary-orientation.png",
+					"aviary-text.png",
+					"aviary-draw.png",
+					"aviary-colorsplash.png"
+				],
+	"thumbnail-image":	"aviary-preview.png",
+	"url":		"http://projects-chrisbosco.herokuapp.com/aviary-demo",
+	"related":	[
+					{
+						"title":	"Drive Mocha-PhantomJS with CoffeeScript",
+						"url":		"http://blog.cbsides.com/Drive-Mocha-Phantom-with-CoffeeScript.html"
+					},
+					{
+						"title":	"Aviary and the Recovering Front-End Web Developer",
+						"url":		"http://blog.cbsides.com/Aviary-and-the-Recovering-Front-End-Dev.html"
+					}
+				],
+	"roles":	{
+					"client-side":	[
+									"LESS CSS, OOCSS, custom sprite generator",
+									"JavaScript, HTML Canvas, CORS, CoffeeScript, Mocha",
+									"Adobe Flash, ActionScript 3",
+                                    "NodeJS, PhantomJS, Bash, Make"
+								]
+				}
+}

@@ -1,0 +1,18 @@
+{
+	"year":		2007,
+	"images":	[
+		"icims-search.png",
+		"icims-dashboard.png"
+	],
+	"thumbnail-image":	"icims-preview.png",
+	"roles":	{
+					"design":	[
+									"Interaction design"
+								],
+					"client-side":	[
+									"HTML, JSP",
+									"CSS",
+									"JavaScript, MooTools"
+								]
+				}
+}

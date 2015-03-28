@@ -1,0 +1,72 @@
+<li class="project-list-item">
+    <div class="row collapse">
+        <div class="small-10 small-offset-2 columns">
+            <h6>
+                <a href="<%= project.html.url %>">
+                    <%= project.html.title %>
+                    (<%= project.json.metadata.year %>)
+                </a>
+            </h6>
+
+            <div class="project-summary">
+                <p>
+                    <%= project.html.metadata.summary %>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <% if (project.json.metadata.roles) { %>
+
+        <div class="project-list-item-roles">
+            <% if (project.json.metadata.roles['design']) { %>
+                <div class="row collapse">
+                    <div class="small-2 columns text-right">
+                        <i title="Design" class="fa fa-pencil-square-o"></i>
+                    </div>
+                    <div class="small-10 columns">
+                        <ul class="no-bullet">
+                            <% project.json.metadata.roles['design'].forEach(function(specificRole) { %>
+                                <li>
+                                    <%= specificRole %>
+                                </li>
+                            <% }) %>
+                        </ul>
+                    </div>
+                </div>
+            <% } %>
+            <% if (project.json.metadata.roles['client-side']) { %>
+                <div class="row collapse">
+                    <div class="small-2 columns text-right">
+                        <i title="Front-end development" class="fa fa-code"></i>
+                    </div>
+                    <div class="small-10 columns">
+                        <ul class="no-bullet">
+                            <% project.json.metadata.roles['client-side'].forEach(function(specificRole) { %>
+                                <li>
+                                    <%= specificRole %>
+                                </li>
+                            <% }) %>
+                        </ul>
+                    </div>
+                </div>
+            <% } %>
+            <% if (project.json.metadata.roles['server-side']) { %>
+                <div class="row collapse">
+                    <div class="small-2 columns text-right">
+                        <i title="Back-end development" class="fa fa-cubes"></i>
+                    </div>
+                    <div class="small-10 columns">
+                        <ul class="no-bullet">
+                            <% project.json.metadata.roles['server-side'].forEach(function(specificRole) { %>
+                                <li>
+                                    <%= specificRole %>
+                                </li>
+                            <% }) %>
+                        </ul>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    <% } %>
+</li>
