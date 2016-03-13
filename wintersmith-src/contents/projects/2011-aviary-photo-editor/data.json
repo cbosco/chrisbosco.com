@@ -1,10 +1,22 @@
 {
 	"year":		2011,
 	"images":	[
-					"aviary-orientation.png",
-					"aviary-text.png",
-					"aviary-draw.png",
-					"aviary-colorsplash.png"
+					{
+                        "name": "aviary-orientation.png",
+                        "size": [616, 420]
+                    },
+					{
+                        "name": "aviary-text.png",
+                        "size": [616, 420]
+                    },
+					{
+                        "name": "aviary-draw.png",
+                        "size": [616, 420]
+                    },
+					{
+                        "name": "aviary-colorsplash.png",
+                        "size": [616, 420]
+                    }
 				],
 	"thumbnail-image":	"aviary-preview.png",
 	"url":		"http://projects-chrisbosco.herokuapp.com/aviary-demo",

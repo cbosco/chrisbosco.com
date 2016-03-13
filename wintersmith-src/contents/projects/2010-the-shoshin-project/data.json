@@ -1,9 +1,18 @@
 {
 	"year":		2010,
 	"images":	[
-					"shoshin-edition.png",
-					"shoshin-video-detail.png",
-					"shoshin-article-detail.png"
+					{
+                        "name": "shoshin-edition.png",
+                        "size": [616, 390]
+                    },
+					{
+                        "name": "shoshin-video-detail.png",
+                        "size": [616, 390]
+                    },
+					{
+                        "name": "shoshin-article-detail.png",
+                        "size": [616, 390]
+                    }
 				],
 	"thumbnail-image":	"shoshin-preview.png",
 	"url":		"http://theshoshinproject.com/",

@@ -48,23 +48,8 @@ $fa-font-path: '.';
 @import "app/vendor";
 
 // carousel customization
-.slick-prev, .slick-next {
-    width: 40px;
-    height: 40px;
-}
-.slick-prev:before, .slick-next:before {
-    font-size: 40px;
-    color: $cb-black;
-    opacity: 0.5;
-}
-.slick-prev { left: -52px; }
-.slick-next { right: -52px; }
-.slick-slider {
+amp-carousel {
     margin-bottom: $column-gutter/2;
-    img {
-        margin: auto;
-        max-height: rem-calc(400);
-    }
 }
 
 // type
@@ -92,6 +77,7 @@ h1, h2, h3, h4, h5, h6 {
 .top-bar {
     padding: 0 $column-gutter/2;
     .name {
+        margin-top: 18px; // hack to fix amp-img logo display
         line-height: $topbar-height;
         height: rem-calc(50);
         img {
@@ -133,15 +119,18 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .heading, .featured-heading {
-    margin-bottom: $column-gutter/2;
     background: $cb-verylightgray;
     h1, h2 {
         margin: rem-calc(8) 0;
+        span {
+            white-space: nowrap;
+        }
     }
 }
 
 .featured {
     border-bottom: rem-calc(8) solid $cb-verylightgray;
+    padding-top: $column-gutter/2;
     margin-bottom: 1em;
 }
 
@@ -229,15 +218,5 @@ footer {
     }
     .project-list-item {
         border-bottom-width: 0;
-    }
-}
-
-@media #{$large-up} {
-
-    // carousel customization
-    .slick-slider {
-        img {
-            max-height: rem-calc(500);
-        }
     }
 }

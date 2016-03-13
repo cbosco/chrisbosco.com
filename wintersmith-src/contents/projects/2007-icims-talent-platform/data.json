@@ -1,8 +1,14 @@
 {
 	"year":		2007,
 	"images":	[
-		"icims-search.png",
-		"icims-dashboard.png"
+					{
+                        "name": "icims-search.png",
+                        "size": [616, 326]
+                    },
+					{
+                        "name": "icims-dashboard.png",
+                        "size": [616, 326]
+                    }
 	],
 	"thumbnail-image":	"icims-preview.png",
 	"roles":	{

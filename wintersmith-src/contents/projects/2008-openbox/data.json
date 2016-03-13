@@ -2,7 +2,10 @@
 
 	"year":		2008,
 	"images":	[
-					"openbox.png"
+					{
+                        "name": "openbox.png",
+                        "size": [616, 382]
+                    }
 				],
 	"thumbnail-image":	"openbox-preview.png",
 	"url":	"http://projects-chrisbosco.herokuapp.com/openbox/",

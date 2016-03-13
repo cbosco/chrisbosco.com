@@ -9,7 +9,7 @@
             </a>
         </p>
         <div class="name">
-            <a href="/"><img src="/images/logo-footer.png"></a>
+            <a href="/"><amp-img width="98" height="80" src="/images/logo-footer.png"></a>
         </div>
 
 <div class="place">
@@ -56,17 +56,26 @@
               </li>
             </ul>
           <p class="copyright">
-            &copy; 2007-2014 <a href="mailto:contact@chrisbosco.com">Chris Bosco</a>
+            &copy; 2007-2016 <a href="mailto:contact@chrisbosco.com">Chris Bosco</a>
           </p>
 
                 </div><!-- .row -->
             </div><!-- .small-12 columns -->
         </footer>
 
-        <script src="/assets/vendor.js"></script>
-        <script src="/assets/app.js"></script>
-        <script>
-            require('app/app');
+        <amp-analytics type="googleanalytics">
+        <script type="application/json">
+        {
+          "vars": {
+            "account": "UA-4850138"
+          },
+          "triggers": {
+            "defaultPageview": {
+              "on": "visible",
+              "request": "pageview"
+            }
+          }
+        }
         </script>
-
+        </amp-analytics>
 

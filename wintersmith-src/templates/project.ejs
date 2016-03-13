@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ⚡>
 <head>
     <% include _head.ejs %>
 </head>
@@ -35,25 +35,30 @@
     </div>
 
     <% if (json) { %>
-
         <% if (json.metadata.images) { %>
 
-
-        <div class="featured texture">
-            <div class="row collapse">
-                <div class="small-12 medium-10 medium-offset-1 large-8 large-offset-2 columns">
-                    <slick slides-to-show="1" arrows="true" infinite="true" responsive="[{breakpoint: 641, settings: { centerMode: true, arrows: false }}]">
+            <div class="featured texture">
+                <div class="row collapse">
+                    <div class="small-12 medium-10 medium-offset-1 large-8 large-offset-2 columns">
+                        <amp-carousel width=400 height=300 layout=responsive type=slides controls>
                         <% json.metadata.images.forEach(function(image) { %>
-                            <div>
-                                <a target="_blank" href="original-images/<%= image %>">
-                                    <img src="<%= image %>">
-                                </a>
-                            </div>
+                        <div>
+
+                            <a target="_blank" href="original-images/<%= image.name %>">
+                                <amp-img 
+                                placeholder
+                                layout="responsive"
+                                width="<%= image.size[0] %>" 
+                                height="<%= image.size[1] %>" 
+                                src="<%= image.name %>">
+                            </a>
+
+                        </div>
                         <% }) %>
-                    </slick>
+                        </amp-carousel>
+                    </div>
                 </div>
             </div>
-        </div>
 
         <% } %>
     <% } %>

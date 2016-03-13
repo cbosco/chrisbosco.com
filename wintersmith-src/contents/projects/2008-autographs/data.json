@@ -2,9 +2,18 @@
 
 	"year":		2008,
 	"images":	[
-					"autographs-dimensions.jpg",
-					"autographs-economy.jpg",
-					"autographs-start.jpg"
+					{
+                        "name": "autographs-dimensions.jpg",
+                        "size": [616, 382]
+                    },
+					{
+                        "name": "autographs-economy.jpg",
+                        "size": [616, 382]
+                    },
+					{
+                        "name": "autographs-start.jpg",
+                        "size": [616, 382]
+                    }
 				],
 	"thumbnail-image":	"autographs-preview.jpg",
 	"url":		"http://projects-chrisbosco.herokuapp.com/autographs/",

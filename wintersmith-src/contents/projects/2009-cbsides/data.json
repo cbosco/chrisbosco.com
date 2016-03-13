@@ -2,8 +2,14 @@
 
 	"year":		2009,
 	"images":	[
-					"cbsides.png",
-					"cbsides-listing.png"
+					{
+                        "name": "cbsides.png",
+                        "size": [616, 370]
+                    },
+					{
+                        "name": "cbsides-listing.png",
+                        "size": [616, 370]
+                    }
 				],
 	"thumbnail-image":	"cbsides-preview.png",
 	"roles":	{

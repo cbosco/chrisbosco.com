@@ -1,9 +1,18 @@
 {
 	"year":		2010,
 	"images":	[
-					"expert-matters-home.png",
-					"expert-matters-overlay.png",
-					"expert-matters-detail.png"
+					{
+                        "name": "expert-matters-home.png",
+                        "size": [616, 395]
+                    },
+					{
+                        "name": "expert-matters-overlay.png",
+                        "size": [616, 395]
+                    },
+					{
+                        "name": "expert-matters-detail.png",
+                        "size": [616, 395]
+                    }
 				],
 	"thumbnail-image":	"expert-matters-preview.png",
 	"related":	[

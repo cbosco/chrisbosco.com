@@ -22,7 +22,7 @@
     featuredProject.metadata = contents.projects[FEATURED_PROJECT]['index.md'].metadata;
 
 %>
-<html lang="en" ng-app="myApp">
+<html lang="en" ⚡>
 <head>
     <% include _head.ejs %>
 </head>
@@ -40,27 +40,31 @@
     <div class="featured-heading text-center">
         <div class="row">
             <div class="small-12 columns">
-                <h2>Featured project: <span style="white-space: nowrap"><%= featuredProject.metadata.title %></span></h2>
+                <h2>Featured project: <span><%= featuredProject.metadata.title %></span></h2>
             </div>
         </div>
     </div>
     <div class="featured texture">
-                <% if (featuredProject.images) { %>
-                <div class="row collapse">
-                    <div class="small-12 medium-10 medium-offset-1 large-8 large-offset-2 columns">
-                        <slick slides-to-show="1" arrows="true" infinite="true" responsive="[{breakpoint: 641, settings: { centerMode: true, arrows: false }}]">
-                            <% featuredProject.images.forEach(function(image) { %>
-                                <div>
-                                    <a href="<%= featuredProject.folder %>">
-                                        <img src="<%= featuredProject.folder + image %>">
-                                    </a>
-                                </div>
-                            <% }) %>
-                        </slick>
-                    </div>
-                </div>
-                <% } %>
-
+        <% if (featuredProject.images) { %>
+        <div class="row collapse">
+            <div class="small-12 medium-10 medium-offset-1 large-8 large-offset-2 columns">
+                <amp-carousel width=400 height=300 layout=responsive type=slides controls>
+                    <% featuredProject.images.forEach(function(image) { %>
+                        <div>
+                            <a href="<%= featuredProject.folder %>">
+                                <amp-img 
+                                    placeholder
+                                    layout="responsive"
+                                    width="<%= image.size[0] %>" 
+                                    height="<%= image.size[1] %>" 
+                                    src="<%= featuredProject.folder + image.name %>">
+                            </a>
+                        </div>
+                    <% }) %>
+                </amp-carousel>
+            </div>
+        </div>
+        <% } %>
         <div class="row">
             <div class="small-12 columns text-center">
 

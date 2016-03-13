@@ -1,9 +1,18 @@
 {
 	"year":		2013,
 	"images":	[
-					"masterstreet-mobile.png",
-					"masterstreet-tablet.png",
-					"masterstreet-desktop.png"
+					{
+                        "name": "masterstreet-mobile.png",
+                        "size": [398, 632]
+                    },
+					{
+                        "name": "masterstreet-tablet.png",
+                        "size": [616, 718]
+                    },
+					{
+                        "name": "masterstreet-desktop.png",
+                        "size": [616, 343]
+                    }
 				],
 	"thumbnail-image":	"masterstreet-preview.png",
 	"related":	[

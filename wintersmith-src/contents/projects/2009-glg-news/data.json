@@ -1,8 +1,14 @@
 {
 	"year":		2009,
 	"images":	[
-					"glgnews-write.png",
-					"glgnews-favorites.png"
+					{
+                        "name": "glgnews-write.png",
+                        "size": [616, 370]
+                    },
+					{
+                        "name": "glgnews-favorites.png",
+                        "size": [616, 370]
+                    }
 				],
 	"thumbnail-image":	"glgnews-preview.png",
 	"related":	[
