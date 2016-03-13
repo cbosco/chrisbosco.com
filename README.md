@@ -33,6 +33,4 @@ Based on [baz](http://github.com/cbosco/baz) application template
 
 To validate the site from AMP perspective, append `#development=1` to a URL, e.g. http://localhost:8080/projects/2011-aviary-photo-editor/#development=1
 
-bug: (title of projects page is 'Untitled')
-
 AMP validation problem: external CSS (SCSS). Inline with Webpack
