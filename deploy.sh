@@ -8,7 +8,7 @@ DEPLOY_REPO_DIR="/Users/chris/Projects/cbosco.github.com"
 BUILD_TEMP_DIR=./dist
 BUILD_REPO_DIR=${PWD}
 
-cd $DEPLOY_REPO_DIR && git reset . && git checkout . && git rm -rf . && rm -rf images && rm -rf assets && rm -rf projects
+cd $DEPLOY_REPO_DIR && git reset . && git checkout . && git rm -rf . && rm -rf images && rm -rf assets && rm -rf projects && rm -rf posts
 rm -rf $BUILD_TEMP_DIR
 cd $BUILD_REPO_DIR && export BROCCOLI_ENV=production && broccoli build $BUILD_TEMP_DIR
 mv -f ${BUILD_TEMP_DIR}/* $DEPLOY_REPO_DIR

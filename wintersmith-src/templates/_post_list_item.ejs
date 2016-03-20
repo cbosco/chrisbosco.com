@@ -1,0 +1,45 @@
+<li class="project-list-item">
+    <div class="row collapse">
+
+        <div class="columns medium-2 show-for-medium-up text-right">
+        <% if (contents.posts[fileName].metadata.Date) { %>
+            <h6><%= contents.posts[fileName].metadata.Date.getUTCFullYear() + '-' +
+            (contents.posts[fileName].metadata.Date.getUTCMonth() + 1) + '-' +
+            contents.posts[fileName].metadata.Date.getUTCDate() %></h6>
+        <% } %>
+        </div>
+        <div class="columns medium-10">
+            <h6>
+                <a href="<%= contents.posts[fileName].filepath.relative.replace('md', 'html') %>">
+                    <%= contents.posts[fileName].metadata.title %>
+                </a>
+            </h6>
+        <% if (contents.posts[fileName].metadata.Date) { %>
+            <h6 class="show-for-small-only"><%= contents.posts[fileName].metadata.Date.getUTCFullYear() + '-' +
+            (contents.posts[fileName].metadata.Date.getUTCMonth() + 1) + '-' +
+            contents.posts[fileName].metadata.Date.getUTCDate() %></h6>
+        <% } %>
+
+            <!-- a ellipsis/expand would be nice here -->
+            <div class="project-summary">
+                <p>
+                    <%= contents.posts[fileName].metadata.Abstract %>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <% if (contents.posts[fileName].metadata.Tags) { %>
+        <div class="project-list-item-roles">
+            <div class="row collapse">
+                <div class="medium-2 columns text-right show-for-medium-up">
+                    <i title="Tags" class="fa fa-tag"></i>
+                </div>
+                <div class="medium-10 columns">
+                    <%= contents.posts[fileName].metadata.Tags %>
+                </div>
+            </div>
+        </div>
+    <% } %>
+</li>
+

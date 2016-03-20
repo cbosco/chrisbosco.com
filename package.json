@@ -1,29 +1,31 @@
 {
-    "name": "chrisbosco-com",
-    "description": "chrisbosco.com static site generator",
-    "version": "0.0.2",
-    "author": "Chris Bosco <contact@chrisbosco.com>",
-    "license": "MIT",
-    "homepage": "http://chrisbosco.com",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/cbosco/cbosco.github.com"
-    },
-    "scripts": {
-        "postinstall": "node_modules/.bin/bower install"
-    },
-    "engines" : { "node" : "~0.10.0" },
-    "devDependencies": {
-        "bower": "^1.2.8",
-        "wintersmith-ejs": "~0.1.4",
-
-        "broccoli": "^0.10.0",
-        "broccoli-merge-trees": "^0.1.3",
-        "broccoli-env": "0.0.1",
-        "broccoli-static-compiler": "^0.1.4",
-        "broccoli-concat": "^0.0.6",
-        "broccoli-sass": "^0.1.0",
-        "broccoli-wintersmith": "^0.0.2"
-
-    }
+  "name": "chrisbosco-com",
+  "description": "chrisbosco.com static site generator",
+  "version": "0.0.2",
+  "author": "Chris Bosco <contact@chrisbosco.com>",
+  "license": "MIT",
+  "homepage": "http://chrisbosco.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cbosco/cbosco.github.com"
+  },
+  "scripts": {
+    "postinstall": "node_modules/.bin/bower install",
+    "watch": "nodemon --exec \"./deploy.sh\""
+  },
+  "engines": {
+    "node": "~0.10.0"
+  },
+  "devDependencies": {
+    "bower": "^1.2.8",
+    "broccoli": "^0.10.0",
+    "broccoli-concat": "^0.0.6",
+    "broccoli-env": "0.0.1",
+    "broccoli-merge-trees": "^0.1.3",
+    "broccoli-sass": "^0.1.0",
+    "broccoli-static-compiler": "^0.1.4",
+    "broccoli-wintersmith": "^0.0.2",
+    "nodemon": "^1.9.1",
+    "wintersmith-ejs": "~0.1.4"
+  }
 }
