@@ -31,7 +31,7 @@ problem than it sounds (or maybe it sounds just about as complicated as
 it is?) and I'm going to walk through my solution: making GoogieSpell
 play nicely with both HTML and plain text.
 
-You can download my modified version of GoogieSpell below; I've modified
+You can [download](#download) my modified version of GoogieSpell below; I've modified
 both the original GoogieSpell JavaScript (which instantiates one
 spellchecker per DOM element) as well as GoogieSpell's later-released
 "Multiple" version, which can check multiple elements through one
@@ -132,14 +132,6 @@ slightly more efficient.
 Try it yourself in the paragraph below. Note that you can correct the
 spelling but I'm not saving it in any way so it will reappear when this
 page is reloaded.
-<script type="text/javascript">
-		//document.domain = 'chrisbosco.com';
-</script>
-<script type="text/javascript" src="http://projects.chrisbosco.com/blog/demo/googiespell/AJS.js"></script>
-<script type="text/javascript" src="http://projects.chrisbosco.com/blog/demo/googiespell/googiespell.js"></script>
-<script type="text/javascript" src="http://projects.chrisbosco.com/blog/demo/googiespell/cookiesupport.js"></script>
-<link href="http://projects.chrisbosco.com/blog/demo/googiespell/googiespell.css" rel="stylesheet" type="text/css" media="all"></link>
-<style type="text/css">#testHTML { height: 120px; border: 1px solid #fff; } .post b span { font-weight: bold; }</style>
 
 ***
 
@@ -184,7 +176,7 @@ explains how to use GoogieSpell with FCKEditor
 
 <a name="Download"></a>
 
-##Download
+## Download
 
 -   Modified GoogieSpell JavaScript:
     [googiespell.js](http://github.com/cbosco/googiespell/blob/master/googiespell.js)
@@ -193,6 +185,15 @@ explains how to use GoogieSpell with FCKEditor
 -   Or, get all modified GoogieSpell files: [googiespell repo at
     github](http://github.com/cbosco/googiespell/tree/master)
     
+
+<script type="text/javascript">
+		//document.domain = 'chrisbosco.com';
+</script>
+<script type="text/javascript" src="http://projects.chrisbosco.com/blog/demo/googiespell/AJS.js"></script>
+<script type="text/javascript" src="http://projects.chrisbosco.com/blog/demo/googiespell/googiespell.js"></script>
+<script type="text/javascript" src="http://projects.chrisbosco.com/blog/demo/googiespell/cookiesupport.js"></script>
+<link href="http://projects.chrisbosco.com/blog/demo/googiespell/googiespell.css" rel="stylesheet" type="text/css" media="all"></link>
+<style type="text/css">#testHTML { height: 120px; border: 1px solid #fff; } .post b span { font-weight: bold; }</style>
 <script type="text/javascript">
         var googie = new GoogieSpell('http://projects.chrisbosco.com/blog/demo/googiespell/', 'http://projects.chrisbosco.com/blog/demo/googiespell/sendReq.php?lang=');
         googie.setSpellContainer('spell_container');
