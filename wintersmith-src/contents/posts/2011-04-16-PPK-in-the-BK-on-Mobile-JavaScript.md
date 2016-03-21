@@ -2,7 +2,7 @@
 title: PPK in the BK on Mobile JavaScript
 template:   post.ejs
 Date: 2011-04-16	
-Slug: PPK-in-the-BK-on-Mobile-JavaScript
+filename: PPK-in-the-BK-on-Mobile-JavaScript.html
 Tags: Mobile Web, JavaScript, UI Patterns
 Abstract: I recently had the pleasure of seeing a true Web pioneer give a talk on mobile JavaScript. A Touching Look Into The Future Known As Today brings Peter-Paul Koch (@ppk, creator of quirksmode.org) to Brooklyn to give an updated talk about his experience in the trenches testing JavaScript touch event support on various mobile devices. I'll attempt to distill it down to some key points.
 ---

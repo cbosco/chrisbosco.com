@@ -2,7 +2,7 @@
 title: "RequireJS: What Not To Do"
 template:   post.ejs
 Date: 2011-03-26	
-Slug: RequireJS-What-Not-To-Do
+filename: RequireJS-What-Not-To-Do.html
 Tags: JavaScript
 Abstract: As with most things, using RequireJS wrong can be worse than not using it at all.
 ---

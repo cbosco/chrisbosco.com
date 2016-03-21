@@ -2,7 +2,7 @@
 title: Scrolling In-Page Links with jQuery
 template:   post.ejs
 Date: 2009-07-06
-Slug: Scrolling-In-Page-Links-with-jQuery
+filename: Scrolling-In-Page-Links-with-jQuery.html
 Tags: JavaScript, jQuery, UI Patterns
 Abstract: In-page links (or, links that jump to specific areas of the current page) are definitely useful for lengthy or text-heavy sites, and often essential when these pages are consumed by screenreaders or "legacy" mobile devices. But they can also be disorienting for many reasons — did I just move up the page? Down it? With the instantaneous transition the browser provides by default, a user is left to guess.
 ---

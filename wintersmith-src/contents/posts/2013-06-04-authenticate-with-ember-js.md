@@ -2,7 +2,7 @@
 title: "Rails: Authenticate with EmberJS"
 template:   post.ejs
 Date: 2013-06-04
-Slug: Rails-Authenticate-with-EmberJS
+filename: Rails-Authenticate-with-EmberJS.html
 Tags: JavaScript, EmberJS, Ruby, Rails, Authentication
 Abstract: Completely client-side user creation and sign in with Ember.js and Rails
 ---

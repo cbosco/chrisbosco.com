@@ -10,7 +10,7 @@
         </div>
         <div class="columns medium-10">
             <h6>
-                <a href="<%= contents.posts[fileName].filepath.relative.replace('md', 'html') %>">
+                <a href="/posts/<%= contents.posts[fileName].metadata.filename %>">
                     <%= contents.posts[fileName].metadata.title %>
                 </a>
             </h6>

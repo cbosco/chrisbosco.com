@@ -2,7 +2,7 @@
 title: jQuery Effect Sequencer
 template:   post.ejs
 Date: 2010-11-01
-Slug: jQuery-Effect-Sequencer
+filename: jQuery-Effect-Sequencer.html
 Tags: JavaScript, jQuery
 Abstract: I've got the opportunity to build a client-heavy web experience with a big emphasis on transitions and effects. This is probably something that would have been built using Flash just a short time ago, but today we're using everyone's favorite JavaScript library, jQuery.
 ---
@@ -59,7 +59,7 @@ big emphasis on transitions and effects. This is probably something that
 would have been built using Flash just a short time ago, but today we're
 using everyone's favorite JavaScript library, jQuery.
 
-![Sequencer](http://projects.cbsides.com/blog/demo/transitions/sequencer.jpg "CC image courtesy of fonitronik on Flickr")
+![Sequencer](http://projects.chrisbosco.com/blog/demo/transitions/sequencer.jpg "CC image courtesy of fonitronik on Flickr")
 
 Just before diving in, I attended [jQuery
 Boston](http://events.jquery.org/2010/boston/) and got totally inspired
@@ -131,5 +131,5 @@ The code, along with the above demo, is available on
     GitHub](http://github.com/cbosco/jquery-transitions)
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script src="http://projects.cbsides.com/blog/demo/transitions/cb.transition.js"></script>
-<script src="http://projects.cbsides.com/blog/demo/transitions/demo.js"></script>
+<script src="http://projects.chrisbosco.com/blog/demo/transitions/cb.transition.js"></script>
+<script src="http://projects.chrisbosco.com/blog/demo/transitions/demo.js"></script>

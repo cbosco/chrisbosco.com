@@ -2,7 +2,7 @@
 title: Aviary and the Recovering Front-End Web Developer
 template:   post.ejs
 Date: 2012-06-09
-Slug: Aviary-and-the-Recovering-Front-End-Dev
+filename: Aviary-and-the-Recovering-Front-End-Dev.html
 Tags: Professional Development
 Abstract: About a year ago I joined up with Aviary, the company that proved creative software doesn't need to be tied to the desktop with its Flash-based image/audio/effect editors. At this time, the war on Flash was in full swing and the job post I applied to was under the auspice* that I would be converting those awesome Flash apps into HTML5. Dream job material am I right? 
 ---

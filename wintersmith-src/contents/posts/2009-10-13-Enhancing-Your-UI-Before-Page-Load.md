@@ -2,7 +2,7 @@
 title: Enhancing Your UI Before Page Load
 template:   post.ejs
 Date: 2009-10-13
-Slug: Enhancing-Your-UI-Before-Page-Load
+filename: Enhancing-Your-UI-Before-Page-Load.html
 Tags: Accessibility, JavaScript
 Abstract: A common drawback of progressive enhancement is that the UI will often "flash" or "flicker" when first loading. This is because conventional wisdom of separation of concerns calls for waiting until the DOM is ready to set up the UI for a richer interaction (tabs, accordion, drilldown, the list goes on). While this makes sense academically, we're not always putting the user experience first.
 ---
@@ -50,7 +50,7 @@ aforementioned flicker you'll likely see, but there is also
 In short, the affected area of the page has to be rendered twice which
 takes even *more* time.
 
-I've created a little [demo](http://projects.cbsides.com/blog/demo/enhancedcss/) of
+I've created a little [demo](http://projects.chrisbosco.com/blog/demo/enhancedcss/) of
 this to illustrate the technique. I don't have any quantitative
 performance comparisons as there is a near-infinite number of
 combinations of browser and implementation, but I've found the technique

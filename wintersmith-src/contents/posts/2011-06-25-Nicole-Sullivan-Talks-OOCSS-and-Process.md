@@ -2,7 +2,7 @@
 title: Nicole Sullivan Talks OOCSS and Process
 template:   post.ejs
 Date: 2011-06-25
-Slug: Nicole-Sullivan-Talks-OOCSS-and-Process
+filename: Nicole-Sullivan-Talks-OOCSS-and-Process.html
 Tags: CSS
 Abstract: Nicole Sullivan (aka @stubbornella) brought Object-oriented CSS (OOCSS) to NYC last Thursday in an updated presentation on how our best practices in CSS are killing us. She was refreshingly candid and it was great to have insight into her work process with big clients. 
 ---

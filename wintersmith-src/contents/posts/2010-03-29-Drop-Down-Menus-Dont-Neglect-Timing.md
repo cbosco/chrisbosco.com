@@ -2,7 +2,7 @@
 title: "Drop-Down Menus: Don't Neglect Timing"
 template:   post.ejs
 Date: 2010-03-29
-Slug: "Drop-Down-Menus-Dont-Neglect-Timing"
+filename: Drop-Down-Menus-Dont-Neglect-Timing.html
 Tags: Accessibility, UI Patterns
 Abstract: I was recently building a "mega menu" (a really big drop-down menu panel) for primary navigation, so I decided to re-read the Jakob Nielsen Alertbox regarding them.  Apparently the mega menu is the only form of drop-down menu to perform well under user testing.
 ---

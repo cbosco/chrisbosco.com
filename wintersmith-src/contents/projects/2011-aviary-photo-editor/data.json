@@ -23,11 +23,11 @@
 	"related":	[
 					{
 						"title":	"Drive Mocha-PhantomJS with CoffeeScript",
-						"url":		"http://blog.cbsides.com/Drive-Mocha-Phantom-with-CoffeeScript.html"
+						"url":		"/posts/Drive-Mocha-Phantom-with-CoffeeScript.html"
 					},
 					{
 						"title":	"Aviary and the Recovering Front-End Web Developer",
-						"url":		"http://blog.cbsides.com/Aviary-and-the-Recovering-Front-End-Dev.html"
+						"url":		"/posts/Aviary-and-the-Recovering-Front-End-Dev.html"
 					}
 				],
 	"roles":	{

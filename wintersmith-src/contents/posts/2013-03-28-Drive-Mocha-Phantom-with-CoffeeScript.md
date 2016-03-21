@@ -2,7 +2,7 @@
 title: Drive Mocha-PhantomJS with CoffeeScript
 template:   post.ejs
 Date: 2013-03-28
-Slug: Drive-Mocha-Phantom-with-CoffeeScript
+filename: Drive-Mocha-Phantom-with-CoffeeScript.html
 Tags: JavaScript, CoffeeScript, PhantomJS, Testing
 Abstract: PhantomJS opened up to me in a major way once I discovered I was able to drive it with Mocha. I still, however, find creating HTML pages for tests very cumbersome, and far from DRY. And I want to write my tests in CoffeeScript, dammit!
 ---

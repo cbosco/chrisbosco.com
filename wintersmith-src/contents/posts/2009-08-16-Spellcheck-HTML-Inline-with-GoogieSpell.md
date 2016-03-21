@@ -2,12 +2,12 @@
 title: Spellcheck HTML Inline with GoogieSpell
 template:   post.ejs
 Date: 2009-08-16
-Slug: Spellcheck-HTML-Inline-with-GoogieSpell
+filename: Spellcheck-HTML-Inline-with-GoogieSpell.html
 Tags: JavaScript, Widgets
 Abstract: Orangoo Labs' GoogieSpell widget is a really clever way of spellchecking input fields or textareas on a Web form, completely inline (think Microsoft Word) and without that nasty popup window you usually see that loops through all of your typos serially. As a bonus, by default it makes a call to Google's spellchecking web service so you don't have to install or maintain your own dictionary (although you can easily extend it to do so). Also, did I mention it's FREE?
 ---
 
-![GoogieSpell screenshot](http://projects.cbsides.com/blog/demo/googiespell/googie_example.png)
+![GoogieSpell screenshot](http://projects.chrisbosco.com/blog/demo/googiespell/googie_example.png)
 
 Orangoo
 Labs' [GoogieSpell](http://orangoo.com/labs/GoogieSpell/) widget is a
@@ -133,12 +133,12 @@ Try it yourself in the paragraph below. Note that you can correct the
 spelling but I'm not saving it in any way so it will reappear when this
 page is reloaded.
 <script type="text/javascript">
-		//document.domain = 'cbsides.com';
+		//document.domain = 'chrisbosco.com';
 </script>
-<script type="text/javascript" src="http://projects.cbsides.com/blog/demo/googiespell/AJS.js"></script>
-<script type="text/javascript" src="http://projects.cbsides.com/blog/demo/googiespell/googiespell.js"></script>
-<script type="text/javascript" src="http://projects.cbsides.com/blog/demo/googiespell/cookiesupport.js"></script>
-<link href="http://projects.cbsides.com/blog/demo/googiespell/googiespell.css" rel="stylesheet" type="text/css" media="all"></link>
+<script type="text/javascript" src="http://projects.chrisbosco.com/blog/demo/googiespell/AJS.js"></script>
+<script type="text/javascript" src="http://projects.chrisbosco.com/blog/demo/googiespell/googiespell.js"></script>
+<script type="text/javascript" src="http://projects.chrisbosco.com/blog/demo/googiespell/cookiesupport.js"></script>
+<link href="http://projects.chrisbosco.com/blog/demo/googiespell/googiespell.css" rel="stylesheet" type="text/css" media="all"></link>
 <style type="text/css">#testHTML { height: 120px; border: 1px solid #fff; } .post b span { font-weight: bold; }</style>
 
 ***
@@ -194,7 +194,7 @@ explains how to use GoogieSpell with FCKEditor
     github](http://github.com/cbosco/googiespell/tree/master)
     
 <script type="text/javascript">
-        var googie = new GoogieSpell('http://projects.cbsides.com/blog/demo/googiespell/', 'http://projects.cbsides.com/blog/demo/googiespell/sendReq.php?lang=');
+        var googie = new GoogieSpell('http://projects.chrisbosco.com/blog/demo/googiespell/', 'http://projects.chrisbosco.com/blog/demo/googiespell/sendReq.php?lang=');
         googie.setSpellContainer('spell_container');
         googie.decorateTextarea('testHTML');
 	

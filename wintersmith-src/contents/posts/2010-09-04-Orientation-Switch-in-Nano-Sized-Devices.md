@@ -2,12 +2,12 @@
 title: Orientation Switch in "Nano"-Sized Devices
 template:   post.ejs
 Date: 2010-09-04	
-Slug: Orientation-Switch-in-Nano-Sized-Devices
+filename: Orientation-Switch-in-Nano-Sized-Devices.html
 Tags: Mobile, UI Patterns
 Abstract: Apple has finally fit a multitouch interface into the 6th generation iPod Nano. In order to cram that into the diminutive form factor, users give up a few features such as video recording, playback, and the orientation sensor. Dropping the sensor seems logical now; the device is so small that orientation loses its meaning, and with a 1:1 aspect ratio there's no potential for a better fit for the on-screen content. I love the new approach of actually rotating the screen with your fingers, in the event you actually need to (assuming that would be due to the way it's clipped to you).
 ---
 
-![iPod Nano screenshot](http://projects.cbsides.com/blog/demo/mobile/nano-rotate.jpg)
+![iPod Nano screenshot](http://projects.chrisbosco.com/blog/demo/mobile/nano-rotate.jpg)
 
 Apple has finally fit a multitouch interface into the 6th generation
 iPod Nano. In order to cram that into the diminutive form factor, users

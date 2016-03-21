@@ -2,7 +2,7 @@
 title: Sorting jQuery DOM Elements
 template:   post.ejs
 Date: 2010-03-28
-Slug: Sorting-jQuery-DOM-Elements
+filename: Sorting-jQuery-DOM-Elements.html
 Tags: JavaScript, jQuery
 Abstract: While updating the jQuery version referenced by a website I was working on, I found an interesting trick you can do with collections of DOM elements as of jQuery 1.3.2 (February 2009). Prior to this release, selecting a collection of DOM elements would return a plain old JavaScript object. Now, you get an array.
 ---

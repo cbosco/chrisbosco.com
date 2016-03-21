@@ -2,7 +2,7 @@
 title: Spellcheck Rich Text with GoogieSpell
 template:   post.ejs
 Date: 2010-08-29
-Slug: Spellcheck-Rich-Text-with-GoogieSpell
+filename: Spellcheck-Rich-Text-with-GoogieSpell.html
 Tags: JavaScript, Widgets
 Abstract: In an earlier post, I explained how to modify the GoogieSpell JavaScript spellchecker to work with text in HTML tags. For an introduction to Orangoo Labs' GoogieSpell, refer to that post. Based on feedback I received, it appeared worthwhile to show how to spellcheck rich text on demand. I'll explain how that's done with a popular editor, FCKEditor.
 ---
@@ -226,14 +226,14 @@ lot at your disposal if you're familiar with the library.
 
 
 
-<link href="http://projects.cbsides.com/blog/demo/googiespell/googiespell.css" rel="stylesheet" type="text/css" media="all" />
+<link href="http://projects.chrisbosco.com/blog/demo/googiespell/googiespell.css" rel="stylesheet" type="text/css" media="all" />
 
-<script type="text/javascript" src="http://projects.cbsides.com/blog/demo/googiespell/AJS.js"></script>
-<script type="text/javascript" src="http://projects.cbsides.com/blog/demo/googiespell/cookiesupport.js"></script>
+<script type="text/javascript" src="http://projects.chrisbosco.com/blog/demo/googiespell/AJS.js"></script>
+<script type="text/javascript" src="http://projects.chrisbosco.com/blog/demo/googiespell/cookiesupport.js"></script>
 
-<script type="text/javascript" src="http://projects.cbsides.com/blog/demo/googiespell/googiespell_editor.js"></script>
-<script type="text/javascript" src="http://projects.cbsides.com/blog/demo/fckeditor/fckeditor.js"></script>
-<script type="text/javascript" src="http://projects.cbsides.com/blog/demo/googiespell/fckeditor_template.js"></script>
+<script type="text/javascript" src="http://projects.chrisbosco.com/blog/demo/googiespell/googiespell_editor.js"></script>
+<script type="text/javascript" src="http://projects.chrisbosco.com/blog/demo/fckeditor/fckeditor.js"></script>
+<script type="text/javascript" src="http://projects.chrisbosco.com/blog/demo/googiespell/fckeditor_template.js"></script>
 <script>
-document.domain = "cbsides.com";
+document.domain = "chrisbosco.com";
 </script>

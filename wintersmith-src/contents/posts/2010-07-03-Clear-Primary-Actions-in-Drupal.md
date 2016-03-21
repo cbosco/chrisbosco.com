@@ -2,7 +2,7 @@
 title: Clear Primary Actions in Drupal
 template:   post.ejs
 Date: 2010-07-03
-Slug: Clear-Primary-Actions-in-Drupal
+filename: Clear-Primary-Actions-in-Drupal.html
 Tags: Drupal, UI Patterns
 Abstract: Clear primary actions can and should be applied across an application anytime there is a choice to be made. Although we can't control our users' actions, we can certainly guide them visually, and as Smashing Magazine points out, "[relieve] the user from having to think about which option to choose in order to complete their task." 
 ---
@@ -31,7 +31,7 @@ lacking this treatment, but after noticing how its buttons are themed
 something like this example below:
 
 ![Clear primary actions
-screenshot](http://projects.cbsides.com/blog/demo/drupal/primary-vs-secondary.png)
+screenshot](http://projects.chrisbosco.com/blog/demo/drupal/primary-vs-secondary.png)
 
 This enhancement has 2 components: A Drupal theme change in
 `template.php` and the CSS to support it. First, we override the
