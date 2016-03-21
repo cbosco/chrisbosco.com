@@ -42,11 +42,12 @@ GoogieSpell you can make changes to the editor, and vice versa.
 First, we build FCKEditor around a textarea for proper progressive
 enhancement (although you can instantiate the editor any way you wish).
 
-	:::javascript
-    window.onload = function() {
-      var oFCKeditor = new FCKeditor('FCKeditor1');
-      oFCKeditor.ReplaceTextarea();
-    };
+```javascript
+window.onload = function() {
+  var oFCKeditor = new FCKeditor('FCKeditor1');
+  oFCKeditor.ReplaceTextarea();
+};
+```
 
 FCKEditor calls the `FCKeditor_OnComplete` function once it's done its
 thing, and it's at this point we intercept, and instantiate GoogieSpell.
@@ -54,14 +55,15 @@ The "textarea" we decorate with GoogieSpell is FCKEditor's editor
 document, which happens to be nested within an iframe element (the
 source of much fun later).
 
-	:::javascript
-    function FCKeditor_OnComplete(editorObj)
-    {
-      var editorDocument = editorObj.EditingArea.Document,
-          googie = new GoogieSpell('/demo/googiespell/', '/demo/googiespell/sendReq.php?lang=');
-      googie.setSpellContainer('spell_container');
-      googie.decorateTextarea(editorDocument.body);
-    }
+```javascript
+function FCKeditor_OnComplete(editorObj)
+{
+  var editorDocument = editorObj.EditingArea.Document,
+      googie = new GoogieSpell('/demo/googiespell/', '/demo/googiespell/sendReq.php?lang=');
+  googie.setSpellContainer('spell_container');
+  googie.decorateTextarea(editorDocument.body);
+}
+```
 
 ## I'm Spellchecking!
 
@@ -69,24 +71,26 @@ GoogieSpell fires a state change event when you check spelling. If we
 pass a reference to the FCKEditor, we can alter it when we perform a
 spellcheck.
 
-	:::javascript	
-	googie.spelling_state_observer = function(state, googie) {
-	  onGoogieStateChange(state, googie, editorObj);
-	};
+```javascript	
+googie.spelling_state_observer = function(state, googie) {
+  onGoogieStateChange(state, googie, editorObj);
+};
+```
 
 Feel free to act on the editor in other ways here. I like to disable the
 editor's buttons to reinforce that this isn't a fully editable state
 while spellchecking.
 
-	:::javascript
-    function onGoogieStateChange(state, googie, editorObj) {
-      if (state === "checking_spell") {
-        editorObj.ToolbarSet.Disable();
-      }
-      else if (state === "spell_check"){  //inactive
-        editorObj.ToolbarSet.Enable();
-      }
-    }
+```javascript
+function onGoogieStateChange(state, googie, editorObj) {
+  if (state === "checking_spell") {
+    editorObj.ToolbarSet.Disable();
+  }
+  else if (state === "spell_check"){  //inactive
+    editorObj.ToolbarSet.Enable();
+  }
+}
+```
 
 ## Build It Where You Use It
 
@@ -105,13 +109,14 @@ create its elements. These functions shortcut eventually to
 `createInFrame`, that uses the iframe's own document to do the element
 building.
 
-	:::javascript
-	googie.createInFrame = function(tag, className) {
-	  var o = editorDocument.createElement(tag);
-	  if (className)
-	    o.className = className;
-	  return o;
-	};
+```javascript
+googie.createInFrame = function(tag, className) {
+  var o = editorDocument.createElement(tag);
+  if (className)
+    o.className = className;
+  return o;
+};
+```
 
 ## Look & Feel
 
@@ -122,12 +127,13 @@ this would be to use an `@import` statement in FCKEditor's
 editor\_area.css file. However, I have a quick and dirty approach that
 you can use when instantiating GoogieSpell.
 
-	:::javascript
-	var googieCSS = editorDocument.createElement('link');
-	googieCSS.setAttribute('rel', 'stylesheet');
-	googieCSS.setAttribute('type', 'text/css');
-	googieCSS.setAttribute('href', '/demo/googiespell/googiespell.css');
-	editorDocument.getElementsByTagName('head')[0].appendChild(googieCSS);
+```javascript
+var googieCSS = editorDocument.createElement('link');
+googieCSS.setAttribute('rel', 'stylesheet');
+googieCSS.setAttribute('type', 'text/css');
+googieCSS.setAttribute('href', '/demo/googiespell/googiespell.css');
+editorDocument.getElementsByTagName('head')[0].appendChild(googieCSS);
+```
 
 GoogieSpell's edit layer also has some hard-coded inline styles and
 dimensions that aren't going to look quite right. These should probably
@@ -137,30 +143,32 @@ GoogieSpell's script, this time adding a new listener:
 `edit_layer_ready_observer`. Follow the pattern of the state change
 observer and add a reference to both GoogieSpell and your FCKEditor.
 
-	:::javascript
-	googie.edit_layer_ready_observer = function(googie) {
-	  onGoogieLayerReady(googie, editorObj);
-	};
+```javascript
+googie.edit_layer_ready_observer = function(googie) {
+  onGoogieLayerReady(googie, editorObj);
+};
+```
 
 This callback function simply adds appropriate styles to GoogieSpell's
 edit layer so that it fills the FCKEditor and matches visually. It's
 also a jumping off point for further customization.
 
-	:::javascript
-    function onGoogieLayerReady(googie, editorObj) {
-      var layerStyle = googie.edit_layer.style;
-      layerStyle.padding = "5px"; // match FCKeditor padding
-      layerStyle.border = 'none';
-      layerStyle.fontFamily = "Arial,Verdana,sans-serif";
-      layerStyle.fontSize = "12px";
+```javascript
+function onGoogieLayerReady(googie, editorObj) {
+  var layerStyle = googie.edit_layer.style;
+  layerStyle.padding = "5px"; // match FCKeditor padding
+  layerStyle.border = 'none';
+  layerStyle.fontFamily = "Arial,Verdana,sans-serif";
+  layerStyle.fontSize = "12px";
 
-      if (AJS.isIe()) {
-        AJS.setHeight(googie.edit_layer, editorObj.EditingArea.IFrame.offsetHeight);
-      } else {
-        AJS.setHeight(googie.edit_layer, 'auto');  
-      }
-      AJS.setWidth(googie.edit_layer, 'auto');
-    }
+  if (AJS.isIe()) {
+    AJS.setHeight(googie.edit_layer, editorObj.EditingArea.IFrame.offsetHeight);
+  } else {
+    AJS.setHeight(googie.edit_layer, 'auto');  
+  }
+  AJS.setWidth(googie.edit_layer, 'auto');
+}
+```
 
 The final change comes when we click a mis-spelled word and bring up
 GoogieSpell's suggestions. The window needs to be offset based on the
@@ -168,28 +176,29 @@ position of the FCKEditor's iframe. Following the previous change, we
 add yet another listener, `editor_window_ready_observer`, along with a
 new callback function.
 
-	:::javascript
-    function onGoogieSuggestionsReady(googie, editorObj) {
-      var w = googie.error_window,
-          w_pos = AJS.absolutePosition(w),
-          editorFrame = editorObj.LinkedField.previousSibling;
-      
-      if (editorFrame) {
-        var e_pos = AJS.absolutePosition(editorFrame),
-            toolBarHeight = editorObj.ToolbarSet._TargetElement.offsetHeight;
-        w_pos.y += (e_pos.y + toolBarHeight);
-        w_pos.x += e_pos.x;
-      }  
-      
-      AJS.setTop(w, w_pos.y);
-      AJS.setLeft(w, w_pos.x);
-      
-      //  Adjust IE's iframe shim to match, if present
-      if (googie.error_window_iframe) {
-        AJS.setTop(googie.error_window_iframe, w_pos.y);
-        AJS.setLeft(googie.error_window_iframe, w_pos.x);
-      }
-    }
+```javascript
+function onGoogieSuggestionsReady(googie, editorObj) {
+  var w = googie.error_window,
+      w_pos = AJS.absolutePosition(w),
+      editorFrame = editorObj.LinkedField.previousSibling;
+  
+  if (editorFrame) {
+    var e_pos = AJS.absolutePosition(editorFrame),
+        toolBarHeight = editorObj.ToolbarSet._TargetElement.offsetHeight;
+    w_pos.y += (e_pos.y + toolBarHeight);
+    w_pos.x += e_pos.x;
+  }  
+  
+  AJS.setTop(w, w_pos.y);
+  AJS.setLeft(w, w_pos.x);
+  
+  //  Adjust IE's iframe shim to match, if present
+  if (googie.error_window_iframe) {
+    AJS.setTop(googie.error_window_iframe, w_pos.y);
+    AJS.setLeft(googie.error_window_iframe, w_pos.x);
+  }
+}
+```
 
 ## CKEditor
 

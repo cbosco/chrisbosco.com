@@ -61,10 +61,11 @@ selectors, but don't use them as the differentiator (e.g. `h3` vs.
 
 Easiest way to show this is an example:
 
-	:::css
-    #sidebar section h2.eyebrow:hover {
-        color: red;
-    } 
+```css
+#sidebar section h2.eyebrow:hover {
+    color: red;
+} 
+```
           
 <style type="text/css">
 #specificity-oocss tbody td {
@@ -114,10 +115,11 @@ You should never get to the thousands because inline styles are an
 antipattern. Speaking of antipatterns, how does `!important` work? It
 will shift this by 4 decimal places:
 
-	:::css
-    h3 { 
-        color: blue !important;
-    }
+```css
+h3 { 
+    color: blue !important;
+}
+```
 
 The color style would have a specificity of 10,000. Not quite "wins over
 everything else." Specificity still has room to grow!

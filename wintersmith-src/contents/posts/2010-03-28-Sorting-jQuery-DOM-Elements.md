@@ -24,48 +24,50 @@ ways on the fly. Here is a simple example of how to set this up.
 
 Markup:
 
-	:::html
-    <ul id="ArraySource">
-        <li>
-            <h4>Category 1</h4>
-            <ul>
-                <li rel="Category_1" name="Item_1">
-                    Item 1
-                </li>
-                <li rel="Category_1" name="Item_2">
-                    Item 2
-                </li>
-                ...
-            </ul>
-        </li>
-        <li>
-            <h4>Category 2</h4>
-            <ul>...</ul>
-        </li>
-        ...
-    </ul>
+```html
+<ul id="ArraySource">
+    <li>
+        <h4>Category 1</h4>
+        <ul>
+            <li rel="Category_1" name="Item_1">
+                Item 1
+            </li>
+            <li rel="Category_1" name="Item_2">
+                Item 2
+            </li>
+            ...
+        </ul>
+    </li>
+    <li>
+        <h4>Category 2</h4>
+        <ul>...</ul>
+    </li>
+    ...
+</ul>
+```
 
 JavaScript:
 
-	:::javascript
-	/*    ArrayTest.list will be an alpha-sorted DOM collection    */
-	var ArrayTest = {
-		setup: function(source) {
-			this.list = $(source);
-			try { this.list.sort(this.alphaSort); } catch(e) { /*legacy javascript; sort unsupported*/ }
-		},
-		alphaSort: function(a,b) {
-			var A = a.getAttribute('name').toUpperCase();	// Make comparison case insensitive
-			var B = b.getAttribute('name').toUpperCase();
-			if (A < B) { return -1; }
-			else if (A > B) { return 1; }
-			else { return 0; }
-		}
-	};
-	$(document).ready(function(){
-		ArrayTest.setup('#ArraySource ul li');
-		// ...Do something with ArrayTest.list ...
-	});
+```javascript
+/*    ArrayTest.list will be an alpha-sorted DOM collection    */
+var ArrayTest = {
+    setup: function(source) {
+        this.list = $(source);
+        try { this.list.sort(this.alphaSort); } catch(e) { /*legacy javascript; sort unsupported*/ }
+    },
+    alphaSort: function(a,b) {
+        var A = a.getAttribute('name').toUpperCase();	// Make comparison case insensitive
+        var B = b.getAttribute('name').toUpperCase();
+        if (A < B) { return -1; }
+        else if (A > B) { return 1; }
+        else { return 0; }
+    }
+};
+$(document).ready(function(){
+    ArrayTest.setup('#ArraySource ul li');
+    // ...Do something with ArrayTest.list ...
+});
+```
 
 This way, you can present the items categorized in a default, accessible
 way in the markup, and then with a few lines of JavaScript and jQuery,

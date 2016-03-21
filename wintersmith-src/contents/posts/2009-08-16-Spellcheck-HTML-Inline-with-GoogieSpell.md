@@ -45,18 +45,19 @@ with getter/setter methods. This acts as a flag for whether you need to
 spellcheck plain text (`input` or `textarea` tags) or HTML (anything
 else).
 
-	:::javascript
-    /*
-        GoogieSpell HTML support / switch between modes
-    */
-    GoogieSpell.isHTML = false;
-    GoogieSpell.prototype.setIsHTML = function(el) {
-        var origSupport = new RegExp('input|textarea', 'i');
-        this.isHTML = origSupport.test(el.nodeName) ? false : true;
-    }
-    GoogieSpell.prototype.getIsHTML = function() {
-        return this.isHTML;
-    }
+```javascript
+/*
+    GoogieSpell HTML support / switch between modes
+*/
+GoogieSpell.isHTML = false;
+GoogieSpell.prototype.setIsHTML = function(el) {
+    var origSupport = new RegExp('input|textarea', 'i');
+    this.isHTML = origSupport.test(el.nodeName) ? false : true;
+}
+GoogieSpell.prototype.getIsHTML = function() {
+    return this.isHTML;
+}
+```
 
 Second, we need to wire this new property into GoogieSpell's `getValue`
 and `setValue` methods, and tell it to use either the `innerHTML` or
@@ -64,17 +65,19 @@ and `setValue` methods, and tell it to use either the `innerHTML` or
 
 `getValue`:
 
-	:::javascript
-    return (this.getIsHTML()) ? ta.innerHTML : ta.value;
+```javascript
+return (this.getIsHTML()) ? ta.innerHTML : ta.value;
+```
 
 `setValue`:
 
-	:::javascript
-    if (this.getIsHTML()) {
-        ta.innerHTML = value;
-    } else {
-        ta.value = value;
-    }
+```javascript
+if (this.getIsHTML()) {
+    ta.innerHTML = value;
+} else {
+    ta.value = value;
+}
+```
 
 Up to now, this has all been pretty straightforward, but once we get to
 GoogieSpell's `showErrorsInIframe` method, we start to do some
@@ -93,29 +96,31 @@ Phase 1: String manipulation. A string representation of the output
 called `outputBuffer` is appended with placeholders for the real
 GoogieSpell error objects:
 
-	:::javascript
-    outputBuffer += '<var class="err_hook">&nbsp;</var>';
+```javascript
+outputBuffer += '<var class="err_hook">&nbsp;</var>';
+```
 
 Phase 2: DOM manipulation. A new function, `insertErrLinks`, is created
 that will read through `outputBuffer` and place GoogieSpell's custom
 `err_link` objects in their correct spots, using the DOM method
 `replaceChild`, preserving all error object information:
 
-	:::javascript
-    GoogieSpell.prototype.insertErrLinks = function(output, err_links) {
-        var all_vars = output.getElementsByTagName('var');
-        var all_vars_len = all_vars.length;
-        var err_count = 0;
-        var err_len = err_links.length;
-        for (var i = 0; i < all_vars_len; i++) {
-            if (all_vars[i].className == 'err_hook') {
-                //  Replace &nbsp; with span.    is needed for IE implementation of innerHTML
-                all_vars[i].replaceChild(err_links[err_count], all_vars[i].firstChild);
-                err_count++;
-                if (err_count == err_len) break;
-            }
+```javascript
+GoogieSpell.prototype.insertErrLinks = function(output, err_links) {
+    var all_vars = output.getElementsByTagName('var');
+    var all_vars_len = all_vars.length;
+    var err_count = 0;
+    var err_len = err_links.length;
+    for (var i = 0; i < all_vars_len; i++) {
+        if (all_vars[i].className == 'err_hook') {
+            //  Replace &nbsp; with span.    is needed for IE implementation of innerHTML
+            all_vars[i].replaceChild(err_links[err_count], all_vars[i].firstChild);
+            err_count++;
+            if (err_count == err_len) break;
         }
     }
+}
+```
 
 Minor note: I insert the `var` tag now, which some browsers give a
 default styling too. I reset this styling in googiespell.css. If you

@@ -58,6 +58,17 @@ h1, h2, h3, h4, h5, h6 {
         margin-right: 0.2rem;
     }
 }
+code {
+    color: $cb-lightblack;
+    font-weight: normal;
+}
+pre {
+    background: $cb-black;
+    color: $cb-verylightgray;
+    code {
+        color: $cb-verylightgray;
+    }
+}
 
 .hero-text {
     color: $cb-darkgray;
@@ -183,6 +194,23 @@ h1, h2, h3, h4, h5, h6 {
         line-height: 1rem;
     }
 }
+.post-detail {
+    h2 {
+        font-size: rem-calc(18);
+    }
+    h3, h4, h5, h6 {
+        font-size: 1rem;
+        color: $cb-mediumgray;
+    }
+    h2, h3, h4, h5, h6 {
+        code { text-transform: none; } // I should get out of this habit
+    }
+    pre {
+        margin-bottom: 1.25rem;
+        padding: rem-calc(18 10 18);
+        overflow-x: auto;
+    }
+}
 .post-detail-tags {
     padding: rem-calc(18 0 10);
 }
@@ -234,6 +262,12 @@ footer {
         border-bottom-width: 0;
     }
     .post-detail {
+        h2 {
+            font-size: rem-calc(22);
+        }
+        h3, h4, h5, h6 {
+            font-size: rem-calc(18);
+        }
         p {
             font-size: rem-calc(18);
         }

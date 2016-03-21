@@ -33,15 +33,16 @@ events for interaction.
 
 If you want to make a distinction:
 
-	:::javascript
-    // desktop
-    element.onmousedown = dostuff;
+```javascript
+// desktop
+element.onmousedown = dostuff;
 
-    // touch
-    element.ontouchstart = function() {
-      dostuff();
-      element.onmousedown = null;
-    };
+// touch
+element.ontouchstart = function() {
+  dostuff();
+  element.onmousedown = null;
+};
+```
 
 ## Half-a-second delay on click
 

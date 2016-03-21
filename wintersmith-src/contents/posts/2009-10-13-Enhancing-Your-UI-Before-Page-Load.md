@@ -34,11 +34,12 @@ A simple, if inelegant solution, is to `document.write()` a CSS file
 full of "enhanced" styles into the `<head />` area of the page,
 typically right after all of your basic CSS.
 
-	:::html
-    <link type="text/css" href="base.css" rel="stylesheet" />
-    <script type="text/javascript">
-        document.write('<link type="text/css" href="enhanced.css" rel="stylesheet" />');
-    </script>
+```html
+<link type="text/css" href="base.css" rel="stylesheet" />
+<script type="text/javascript">
+    document.write('<link type="text/css" href="enhanced.css" rel="stylesheet" />');
+</script>
+```
 
 With this, we trade some code maintainability for a potentially drastic
 improvement in performance and seamlessness (disclaimer: may not be a

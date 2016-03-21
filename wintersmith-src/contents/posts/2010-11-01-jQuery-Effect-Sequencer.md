@@ -72,8 +72,9 @@ ninja. My favorite part was a little recursive function called
 of elements. If you try to do something like this directly (without the
 sequencer):
 
-	:::javascript
-    $('#Gnomes').children().animate({height: '100px'}, 'fast');
+```javascript
+$('#Gnomes').children().animate({height: '100px'}, 'fast');
+```
 
 jQuery is going to perform the animations simultaneously, which may or
 may not be desired. I grabbed the sequencer because I wanted to create a

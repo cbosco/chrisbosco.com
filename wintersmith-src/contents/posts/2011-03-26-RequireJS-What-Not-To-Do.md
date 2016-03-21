@@ -54,8 +54,9 @@ definitions. No more blocking!
 
 For example:
 
-	:::javascript
-    define('facebook', ['http://connect.facebook.net/en_US/all.js']);
+```javascript
+define('facebook', ['http://connect.facebook.net/en_US/all.js']);
+```
 
 The final solution, in terms of explicit script tags:
 

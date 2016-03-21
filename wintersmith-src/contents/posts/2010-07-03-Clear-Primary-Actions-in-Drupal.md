@@ -43,27 +43,28 @@ add the class `button` to every button for simpler CSS styling, since
 Drupal's submit buttons are all the ambiguously styled
 `<input type="submit"/>` elements.
 
-	:::php
-    /*
-     *  Primary & Secondary button styling
-     */
-    function phptemplate_button($element) {
-      // Make sure not to overwrite classes.
-      if (isset($element['#attributes']['class'])) {
-        $element['#attributes']['class'] = 'button form-'. $element['#button_type'] .' '. $element['#attributes']['class'];
-      }
-      else {
-        $element['#attributes']['class'] = 'button form-'. $element['#button_type'];
-      }
-      // Add primaryAction class to all buttons with "edit-submit" pattern in their id
-      if (strpos($element['#id'], 'edit-submit') !== FALSE) {
-        $element['#attributes']['class'] = 'primaryAction '. $element['#attributes']['class'];    
-      }
-      return '<input type="submit" '. (empty($element['#name']) ? '' : 
-      	'name="'. $element['#name'] .'" ') .'id="'. $element['#id'] . 
-      	'" value="'. check_plain($element['#value']) .'" '. 
-      	drupal_attributes($element['#attributes']) .'/>';
-    } 
+```php
+/*
+ *  Primary & Secondary button styling
+ */
+function phptemplate_button($element) {
+  // Make sure not to overwrite classes.
+  if (isset($element['#attributes']['class'])) {
+    $element['#attributes']['class'] = 'button form-'. $element['#button_type'] .' '. $element['#attributes']['class'];
+  }
+  else {
+    $element['#attributes']['class'] = 'button form-'. $element['#button_type'];
+  }
+  // Add primaryAction class to all buttons with "edit-submit" pattern in their id
+  if (strpos($element['#id'], 'edit-submit') !== FALSE) {
+    $element['#attributes']['class'] = 'primaryAction '. $element['#attributes']['class'];    
+  }
+  return '<input type="submit" '. (empty($element['#name']) ? '' : 
+    'name="'. $element['#name'] .'" ') .'id="'. $element['#id'] . 
+    '" value="'. check_plain($element['#value']) .'" '. 
+    drupal_attributes($element['#attributes']) .'/>';
+} 
+```
 
 Styling is open to different designs, but I like the [CSS3 Gradient
 Buttons](http://www.webdesignerwall.com/tutorials/css3-gradient-buttons/)
@@ -72,50 +73,51 @@ eye-catching, and leaving the secondary buttons more washed out in
 appearance. The CSS below will produce the example from the screenshot,
 with a blue primary button and white/gray secondary ones.
 
-	:::css
-    input.button { 
-      display: inline-block;
-      outline: none;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      font: bold 12px/100% Arial, sans-serif;
-      padding: 0.4em 1.5em 0.42em;
-      text-shadow: 0 1px 1px rgba(0,0,0,.3);
-      -webkit-border-radius: 5px;
-      -moz-border-radius: 5px;
-      border-radius: 5px;
-      -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-      -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
-      box-shadow: 0 1px 2px rgba(0,0,0,.2);
-      margin-right: 5px;
-      color: #606060;
-      border: solid 1px #b7b7b7;
-      background: #fff;
-      background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
-      background: -moz-linear-gradient(top,  #fff,  #ededed);
-      filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
-    }
-    input.button:hover {
-      background: #ededed;
-      background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#dcdcdc));
-      background: -moz-linear-gradient(top,  #fff,  #dcdcdc);
-      filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dcdcdc');
-    }
-    input.primaryAction {
-      color: #d9eef7;
-      border: solid 1px #0076a3;
-      background: #0095cd;
-      background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
-      background: -moz-linear-gradient(top,  #00adee,  #0078a5);
-      filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');
-    }
-    input.primaryAction:hover {
-      background: #007ead;
-      background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
-      background: -moz-linear-gradient(top,  #0095cc,  #00678e);
-      filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0095cc', endColorstr='#00678e');
-    }
+```css
+input.button { 
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: bold 12px/100% Arial, sans-serif;
+  padding: 0.4em 1.5em 0.42em;
+  text-shadow: 0 1px 1px rgba(0,0,0,.3);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  margin-right: 5px;
+  color: #606060;
+  border: solid 1px #b7b7b7;
+  background: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+  background: -moz-linear-gradient(top,  #fff,  #ededed);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
+}
+input.button:hover {
+  background: #ededed;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#dcdcdc));
+  background: -moz-linear-gradient(top,  #fff,  #dcdcdc);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dcdcdc');
+}
+input.primaryAction {
+  color: #d9eef7;
+  border: solid 1px #0076a3;
+  background: #0095cd;
+  background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+  background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');
+}
+input.primaryAction:hover {
+  background: #007ead;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+  background: -moz-linear-gradient(top,  #0095cc,  #00678e);
+  filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0095cc', endColorstr='#00678e');
+}
+```
 
 <style type="text/css">
 input.button { 
