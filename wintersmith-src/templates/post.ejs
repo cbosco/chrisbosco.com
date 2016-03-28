@@ -39,33 +39,6 @@
     </div>
 <% } %>
 
-        <% if (page.metadata.images) { %>
-
-            <div class="featured texture">
-                <div class="row collapse">
-                    <div class="small-12 medium-10 medium-offset-1 large-8 large-offset-2 columns">
-                        <amp-carousel width=400 height=300 layout=responsive type=slides controls>
-                        <% page.metadata.images.forEach(function(image) { %>
-                        <div>
-
-                            <a target="_blank" href="original-images/<%= image.name %>">
-                                <amp-img 
-                                placeholder
-                                layout="responsive"
-                                width="<%= image.size[0] %>" 
-                                height="<%= image.size[1] %>" 
-                                src="<%= image.name %>">
-                            </a>
-
-                        </div>
-                        <% }) %>
-                        </amp-carousel>
-                    </div>
-                </div>
-            </div>
-
-        <% } %>
-
     <div class="row">
         <div class="small-12 columns">
 

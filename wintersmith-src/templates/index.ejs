@@ -48,7 +48,7 @@
         <% if (featuredProject.images) { %>
         <div class="row collapse">
             <div class="small-12 medium-10 medium-offset-1 large-8 large-offset-2 columns">
-                <amp-carousel width=400 height=300 layout=responsive type=slides controls>
+                <amp-carousel width=400 height=300 layout=responsive type=slides controls loop>
                     <% featuredProject.images.forEach(function(image) { %>
                         <div>
                             <a href="<%= featuredProject.folder %>">
