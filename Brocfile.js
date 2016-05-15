@@ -5,6 +5,7 @@ var concat = require('broccoli-concat');
 var compileSass = require('broccoli-sass');
 
 var wintersmith = require('broccoli-wintersmith');
+var PurifyCSS = require('./lib/broccoliPurifyCSS');
 var wintersmithPublicOutput = 'wintersmith-src';
 
 var appCss = 'styles';
@@ -22,10 +23,9 @@ var appAndVendorCss = mergeTrees(
         {overwrite: true}
     );
 
+appAndVendorCss = compileSass([appAndVendorCss], 'app.scss', 'assets/app.css');
 if (env === 'production' || env === 'qa') {
-    appAndVendorCss = compileSass([appAndVendorCss], 'app.scss', 'assets/app.css', {outputStyle: 'compressed'});
-} else {
-    appAndVendorCss = compileSass([appAndVendorCss], 'app.scss', 'assets/app.css');
+    appAndVendorCss = new PurifyCSS([appAndVendorCss], ['./wintersmith-src/templates/**/*.ejs'], 'assets/app.css', 'assets/app.css', { minify: true/*, rejected: true */});
 }
 
 var vendorFontsFontAwesome = pickFiles(vendorFonts, {
