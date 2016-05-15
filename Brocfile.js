@@ -8,8 +8,7 @@ var wintersmith = require('broccoli-wintersmith');
 var wintersmithPublicOutput = 'wintersmith-src';
 
 var appCss = 'styles';
-var vendorFonts = 'bower_components';
-var vendorImages = 'bower_components';
+var vendorFonts = 'node_modules';
 var publicFiles = 'public';
 
 // a bit of a hardcode/hack but we want to use foundation SCSS files directly
@@ -17,8 +16,8 @@ var publicFiles = 'public';
 var appAndVendorCss = mergeTrees(
         [appCss]
             .concat([
-                'bower_components/foundation/scss',
-                'bower_components/font-awesome/scss'
+                'node_modules/foundation-sites/scss',
+                'node_modules/font-awesome/scss'
             ]),
         {overwrite: true}
     );

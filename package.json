@@ -10,21 +10,21 @@
     "url": "https://github.com/cbosco/cbosco.github.com"
   },
   "scripts": {
-    "postinstall": "node_modules/.bin/bower install",
     "watch": "nodemon --exec \"./deploy.sh\""
   },
   "engines": {
     "node": "~0.10.0"
   },
   "devDependencies": {
-    "bower": "^1.2.8",
     "broccoli": "^0.10.0",
     "broccoli-concat": "^0.0.6",
     "broccoli-env": "0.0.1",
     "broccoli-merge-trees": "^0.1.3",
-    "broccoli-sass": "^0.1.0",
+    "broccoli-sass": "^0.7.0",
     "broccoli-static-compiler": "^0.1.4",
     "broccoli-wintersmith": "^0.0.2",
+    "foundation-sites": "~5.5.3",
+    "font-awesome": "~4.1.0",
     "nodemon": "^1.9.1",
     "wintersmith-ejs": "~0.1.4"
   }
