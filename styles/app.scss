@@ -42,7 +42,7 @@ $crumb-border-size: 0;
 $crumb-padding: rem-calc(8 0 8);
 
 // font awesome config
-$fa-font-path: '.';
+$fa-font-path: '/assets';
 @import "foundation";
 @import "font-awesome";
 

@@ -6,6 +6,7 @@ var compileSass = require('broccoli-sass');
 
 var wintersmith = require('broccoli-wintersmith');
 var PurifyCSS = require('./lib/broccoliPurifyCSS');
+var InlineCSS = require('./lib/broccoliInlineCSS');
 var wintersmithPublicOutput = 'wintersmith-src';
 
 var appCss = 'styles';
@@ -33,9 +34,10 @@ var vendorFontsFontAwesome = pickFiles(vendorFonts, {
     destDir: 'assets'
 });
 
+// inline CSS into _head template
+var inlinedWintersmithPublicOutputOverrides = new InlineCSS([wintersmithPublicOutput, appAndVendorCss], 'templates/_head.ejs', 'assets/app.css');
+
 // build wintersmith contents
-wintersmithPublicOutput = wintersmith(wintersmithPublicOutput, {
-    config: require('path').resolve('./wintersmith-src/config.json')
-});
+wintersmithPublicOutput = wintersmith(mergeTrees([wintersmithPublicOutput, inlinedWintersmithPublicOutputOverrides], { overwrite: true }));
 
 module.exports = mergeTrees([appAndVendorCss, vendorFontsFontAwesome, publicFiles, wintersmithPublicOutput], { overwrite: true });
